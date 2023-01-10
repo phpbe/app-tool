@@ -206,7 +206,7 @@ class Template extends Section
         echo '#' . $this->id . ' .tool-menu-lv3-item {';
         echo 'list-style: none;';
         echo 'display: inline-block;';
-        echo 'padding: .5rem 1rem;';
+        echo 'padding: .5rem .75rem;';
         echo '}';
 
         echo '#' . $this->id . ' .tool-menu-lv1-item-active,';
