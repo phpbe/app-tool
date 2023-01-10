@@ -7,6 +7,17 @@ use Be\App\Tool\Config\Page\Base;
 class index extends Base
 {
 
+    public int $middle = 1;
+
+    public array $middleSections = [
+        [
+            'name' => 'App.Tool.Menu',
+        ],
+        [
+            'name' => 'App.Tool.Md5',
+        ],
+    ];
+
     /**
      * @BeConfigItem("HEAD头标题",
      *     description="HEAD头标题，用于SEO",

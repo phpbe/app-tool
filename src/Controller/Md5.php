@@ -29,15 +29,17 @@ class Md5
         $response->display();
     }
 
-
     public function encode()
     {
+        $request = Be::getRequest();
+        $response = Be::getResponse();
 
-    }
-
-    public function decode()
-    {
-
+        $key = $request->post('key','');
+        if($key) {
+            $response->set('success', true);
+            $response->set('data', md5($key));
+            $response->json();
+        }
     }
 
 }
