@@ -19,8 +19,6 @@ class Template extends Section
 
         $this->css();
 
-        $color = \Be\Be::getRequest()->get('color', '');
-
         echo '<div class="tool-color">';
         if ($this->position === 'middle' && $this->config->width === 'default') {
             echo '<div class="be-container">';
@@ -32,7 +30,7 @@ class Template extends Section
         echo '<div class="be-col-auto">';
         echo '<div class="be-px-50">';
         echo '<form id="form_encode">';
-        echo '<input type="text" class="be-input" name="key" id="key" value="' . $color . '" placeholder="请输入颜色..." onkeyup="checkEncode();" />';
+        echo '<input type="text" class="be-input" name="key" id="key" placeholder="请输入颜色..." onkeyup="checkEncode();" />';
         echo '</form>';
         echo '</div>';
         echo '</div>';
@@ -42,6 +40,7 @@ class Template extends Section
         echo '</div>';
 
 
+        echo '<div id="result">';
         echo '<div class="be-row be-mt-100">';
         echo '<div class="be-col">';
         echo '<div class="be-ta-center">变浅</div>';
@@ -53,6 +52,7 @@ class Template extends Section
         echo '<div class="be-col">';
         echo '<div class="be-ta-center">加深</div>';
         echo '<ul class="be-mt-50 be-mb-200" id="darker-colors"></ul>';
+        echo '</div>';
         echo '</div>';
         echo '</div>';
 
@@ -71,9 +71,10 @@ class Template extends Section
         echo $this->getCssPadding('tool-color');
         echo $this->getCssMargin('tool-color');
         echo $this->getCssBackgroundColor('tool-color');
-        echo '#lighter-colors, #darker-colors{ margin:0; padding:0;}';
-        echo '#lighter-colors li, #darker-colors li{ padding:5px; margin:5px; list-style:none; text-align:center; font-family:黑体; font-size:1.5rem;}';
-        echo '#darker-colors li{ color: #ccc;}';
+        echo '#lighter-colors, #darker-colors{margin:0; padding:0;}';
+        echo '#lighter-colors li, #darker-colors li{padding:5px; margin:5px; list-style:none; text-align:center; font-family:黑体; font-size:1.5rem;}';
+        echo '#darker-colors li{color: #ccc;}';
+        echo '#result{display: none;}';
         echo '</style>';
     }
 
@@ -110,6 +111,9 @@ class Template extends Section
         echo 'dataType: "json",';
         echo 'success: function(response) {';
         echo 'if (response.success) {';
+
+        echo '$("#result").show();';
+
         echo 'let html;';
         echo 'let color;';
 
@@ -127,7 +131,11 @@ class Template extends Section
         echo '}';
         echo '$resultDarkerColors.html(html);';
 
+        echo '} else {';
+        echo '$("#result").hide();';
+        echo 'alert(response.message);';
         echo '}';
+
         echo '}';
         echo '});';
         echo '});';

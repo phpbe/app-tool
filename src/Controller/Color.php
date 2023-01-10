@@ -40,7 +40,7 @@ class Color
         if (substr($key,0 , 1) != '#') {
             $key = '#' . $key;
         }
-        
+
         if ($key && $this->isColor($key)) {
             $lighterColors = [
                 '0%' => $key,
@@ -59,6 +59,10 @@ class Color
                 'lighterColors' => $lighterColors,
                 'darkerColors' => $darkerColors,
             ]);
+            $response->json();
+        } else {
+            $response->set('success', false);
+            $response->set('message', '无效的颜色！');
             $response->json();
         }
     }
