@@ -2,10 +2,19 @@
 
 namespace Be\App\Tool\Config\Page\Color;
 
-use Be\App\Tool\Config\Page\Base;
-
-class index extends Base
+class index
 {
+
+    public int $middle = 1;
+
+    public array $middleSections = [
+        [
+            'name' => 'App.Tool.Menu',
+        ],
+        [
+            'name' => 'App.Tool.Color',
+        ],
+    ];
 
     /**
      * @BeConfigItem("HEAD头标题",

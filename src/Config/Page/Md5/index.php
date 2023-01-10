@@ -2,9 +2,7 @@
 
 namespace Be\App\Tool\Config\Page\Md5;
 
-use Be\App\Tool\Config\Page\Base;
-
-class index extends Base
+class index
 {
 
     public int $middle = 1;

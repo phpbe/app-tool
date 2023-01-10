@@ -35,8 +35,8 @@ class Base64
         $request = Be::getRequest();
         $response = Be::getResponse();
 
-        $key = $request->post('key','');
-        if($key) {
+        $key = $request->post('key', '');
+        if ($key) {
             $response->set('success', true);
             $response->set('data', base64_encode($key));
             $response->json();
@@ -48,8 +48,8 @@ class Base64
         $request = Be::getRequest();
         $response = Be::getResponse();
 
-        $key = $request->post('key','');
-        if($key) {
+        $key = $request->post('key', '');
+        if ($key) {
             $response->set('success', true);
             $response->set('data', htmlspecialchars(base64_decode($key)));
             $response->json();

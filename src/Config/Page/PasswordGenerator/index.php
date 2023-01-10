@@ -2,9 +2,8 @@
 
 namespace Be\App\Tool\Config\Page\PasswordGenerator;
 
-use Be\App\Tool\Config\Page\Base;
 
-class index extends Base
+class index
 {
 
     /**

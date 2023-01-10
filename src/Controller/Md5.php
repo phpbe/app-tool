@@ -34,8 +34,8 @@ class Md5
         $request = Be::getRequest();
         $response = Be::getResponse();
 
-        $key = $request->post('key','');
-        if($key) {
+        $key = $request->post('key', '');
+        if ($key) {
             $response->set('success', true);
             $response->set('data', md5($key));
             $response->json();

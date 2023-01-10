@@ -29,15 +29,30 @@ class Timestamp
         $response->display();
     }
 
-
     public function encode()
     {
+        $request = Be::getRequest();
+        $response = Be::getResponse();
 
+        $key = $request->post('key', '');
+        if ($key) {
+            $response->set('success', true);
+            $response->set('data', date('Y-m-d H:i:s', $key));
+            $response->json();
+        }
     }
 
     public function decode()
     {
+        $request = Be::getRequest();
+        $response = Be::getResponse();
 
+        $key = $request->post('key', '');
+        if ($key) {
+            $response->set('success', true);
+            $response->set('data', strtotime($key));
+            $response->json();
+        }
     }
 
 }

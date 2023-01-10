@@ -25,7 +25,7 @@ class Template extends Section
         }
 
         echo '<div class="be-row">';
-        echo '<div class="be-col">请输入要加密或解密的字符串</div>';
+        echo '<div class="be-col">请输入要加密的字符串</div>';
         echo '<div class="be-col-auto"><div style="width: 240px"></div></div>';
         echo '<div class="be-col">计算结果</div>';
         echo '</div>';
@@ -42,7 +42,7 @@ class Template extends Section
         echo '</div>';
         echo '</div>';
         echo '<div class="be-col">';
-        echo '<div id="result_encode" style="max-height:200px; word-break:break-all;word-wrap:break-word; overflow-y: auto;"></div>';
+        echo '<div id="result_encode"></div>';
         echo '</div>';
         echo '</div>';
 
