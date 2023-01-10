@@ -32,12 +32,51 @@ class Color
 
     public function encode()
     {
+        $request = Be::getRequest();
+        $response = Be::getResponse();
 
+        $key = $request->post('key', '');
+        $key = trim($key);
+        if (substr($key,0 , 1) != '#') {
+            $key = '#' . $key;
+        }
+        
+        if ($key && $this->isColor($key)) {
+            $lighterColors = [
+                '0%' => $key,
+            ];
+            $darkerColors = [
+                '0%' => $key,
+            ];
+            $libCss = Be::getLib('Css');
+            for ($i = 5; $i <= 100; $i += 5) {
+                $lighterColors[$i . '%'] = $libCss->lighter($key, $i);
+                $darkerColors[$i . '%'] = $libCss->darker($key, $i);
+            }
+
+            $response->set('success', true);
+            $response->set('data', [
+                'lighterColors' => $lighterColors,
+                'darkerColors' => $darkerColors,
+            ]);
+            $response->json();
+        }
     }
 
-    public function decode()
+    private function isColor($color)
     {
+        if (strlen($color) < 3) return false;
+        if (substr($color, 0, 1) == '#') $color = substr($color, 1);
+        if (strlen($color) != 3 && strlen($color) != 6) return false;
+        $color = strtolower($color);
 
+        $colors = str_split($color);
+        $units = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+        foreach ($colors as $c) {
+            if (!in_array($c, $units)) return false;
+        }
+        return true;
     }
+
 
 }

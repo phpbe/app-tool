@@ -209,10 +209,10 @@ class Template extends Section
         echo 'padding: .5rem .75rem;';
         echo '}';
 
-        echo '#' . $this->id . ' .tool-menu-lv1-item-active,';
-        echo '#' . $this->id . ' .tool-menu-lv2-item-active,';
-        echo '#' . $this->id . ' .tool-menu-lv3-item-active {';
-        echo 'color: var(--minor-color);';
+        echo '#' . $this->id . ' .tool-menu-lv1-item-active a,';
+        echo '#' . $this->id . ' .tool-menu-lv2-item-active a,';
+        echo '#' . $this->id . ' .tool-menu-lv3-item-active a {';
+        echo 'color: var(--major-color);';
         echo '}';
 
         echo '#' . $this->id . ' .tool-menu-lv1-item-link,';

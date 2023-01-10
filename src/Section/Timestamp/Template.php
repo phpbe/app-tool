@@ -19,7 +19,7 @@ class Template extends Section
 
         $this->css();
 
-        echo '<div class="tool-base64">';
+        echo '<div class="tool-timestamp">';
         if ($this->position === 'middle' && $this->config->width === 'default') {
             echo '<div class="be-container">';
         }
@@ -78,9 +78,9 @@ class Template extends Section
     private function css()
     {
         echo '<style type="text/css">';
-        echo $this->getCssPadding('tool-base64');
-        echo $this->getCssMargin('tool-base64');
-        echo $this->getCssBackgroundColor('tool-base64');
+        echo $this->getCssPadding('tool-timestamp');
+        echo $this->getCssMargin('tool-timestamp');
+        echo $this->getCssBackgroundColor('tool-timestamp');
         echo '</style>';
     }
 
