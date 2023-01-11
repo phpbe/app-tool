@@ -3,7 +3,7 @@
 namespace Be\App\Tool\Section\Md5;
 
 /**
- * @BeConfig("Md5", icon="el-icon-thumb")
+ * @BeConfig("Md5", icon="bi-app")
  */
 class Config
 {

@@ -3,7 +3,7 @@
 namespace Be\App\Tool\Section\Menu;
 
 /**
- * @BeConfig("网址树", icon="el-icon-thumb")
+ * @BeConfig("网址树", icon="bi-grid")
  */
 class Config
 {

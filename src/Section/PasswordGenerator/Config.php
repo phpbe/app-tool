@@ -3,7 +3,7 @@
 namespace Be\App\Tool\Section\PasswordGenerator;
 
 /**
- * @BeConfig("密码生成器", icon="el-icon-thumb")
+ * @BeConfig("密码生成器", icon="bi-app")
  */
 class Config
 {

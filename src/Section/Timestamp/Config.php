@@ -3,7 +3,7 @@
 namespace Be\App\Tool\Section\Timestamp;
 
 /**
- * @BeConfig("时间戳", icon="el-icon-thumb")
+ * @BeConfig("时间戳", icon="bi-app")
  */
 class Config
 {

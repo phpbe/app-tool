@@ -14,7 +14,7 @@ class Menu extends Auth
     /**
      * 指定项目下的项目文档管理
      *
-     * @BeMenu("菜单", icon="bi-Tools", ordering="1.1")
+     * @BeMenu("菜单", icon="bi-grid", ordering="1.1")
      * @BePermission("管理", ordering="1.1")
      */
     public function manager()

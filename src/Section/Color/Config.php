@@ -3,7 +3,7 @@
 namespace Be\App\Tool\Section\Color;
 
 /**
- * @BeConfig("Base64", icon="el-icon-thumb")
+ * @BeConfig("Base64", icon="bi-app")
  */
 class Config
 {

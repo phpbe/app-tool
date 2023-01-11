@@ -1,7 +1,6 @@
 <be-page-content>
     <div class="be-bc-fff be-p-150" id="app" v-cloak>
 
-
         <div class="be-fw-bold be-bb-eee be-pb-50">初始化工具菜单</div>
         <div class="be-c-666 be-mt-50">初始化功能用来重置工具菜单，将首先清除工具菜单，然后检测应用中的菜单项注解，重建菜单项。</div>
         <div class="be-mt-100">
