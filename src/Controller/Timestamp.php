@@ -10,7 +10,7 @@ class Timestamp
     /**
      * Base64
      *
-     * @BeMenu("时间戳")
+     * @BeMenu("时间戳", ordering="3")
      * @BeRoute("/tool/timestamp")
      */
     public function index()

@@ -10,7 +10,7 @@ class Color
     /**
      * Base64
      *
-     * @BeMenu("颜色处理")
+     * @BeMenu("颜色处理", ordering="5")
      * @BeRoute("/tool/color")
      */
     public function index()

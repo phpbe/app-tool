@@ -6,46 +6,40 @@ use Be\App\System\Controller\Admin\Auth;
 use Be\Be;
 
 /**
- * @BePermissionGroup("网址")
+ * @BePermissionGroup("菜单")
  */
-class Url extends Auth
+class Menu extends Auth
 {
 
     /**
      * 指定项目下的项目文档管理
      *
-     * @BeMenu("网址", icon="bi-Tool-heart", ordering="2.1")
-     * @BePermission("网址管理", ordering="2.1")
+     * @BeMenu("菜单", icon="bi-Tools", ordering="1.1")
+     * @BePermission("管理", ordering="1.1")
      */
     public function manager()
     {
         $request = Be::getRequest();
         $response = Be::getResponse();
 
-        $serviceCategory = Be::getService('App.Tool.Admin.Category');
-        $categoryTree = $serviceCategory->getTree();
-        $response->set('categoryTree', $categoryTree);
-
-        $response->set('title', '网址管理');
+        $response->set('title', '菜单管理');
         $response->display();
     }
 
     /**
-     * 获取文档
+     * 初始化工具菜单
      *
-     * @BePermission("项目文档管理")
+     * @BePermission("初始化", ordering="1.2")
      */
-    public function getGroupUrls()
+    public function init()
     {
         $request = Be::getRequest();
         $response = Be::getResponse();
-
         try {
-            $categoryId = $request->json('category_id', '');
-            $groupUrls = Be::getService('App.Tool.Admin.Url')->getGroupUrls($categoryId);
+            $service = Be::getService('App.Tool.Admin.Menu');
+            $service->init();
             $response->set('success', true);
-            $response->set('message', '获取文档成功！');
-            $response->set('groupUrls', $groupUrls);
+            $response->set('message', '初始化工具菜单成功！');
             $response->json();
         } catch (\Throwable $t) {
             $response->set('success', false);
@@ -55,20 +49,19 @@ class Url extends Auth
     }
 
     /**
-     * 保存
+     * 删除工具菜单
      *
-     * @BePermission("保存网址")
+     * @BePermission("删除", ordering="1.3")
      */
-    public function edit()
+    public function delete()
     {
         $request = Be::getRequest();
         $response = Be::getResponse();
-
         try {
-            $categoryId = $request->json('category_id', '');
-            Be::getService('App.Tool.Admin.Url')->edit($categoryId, $request->json('formData'));
+            $service = Be::getService('App.Tool.Admin.Menu');
+            $service->delete();
             $response->set('success', true);
-            $response->set('message', '保存成功！');
+            $response->set('message', '删除工具菜单成功！');
             $response->json();
         } catch (\Throwable $t) {
             $response->set('success', false);

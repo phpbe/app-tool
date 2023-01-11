@@ -10,7 +10,7 @@ class Md5
     /**
      * Base64
      *
-     * @BeMenu("MD5")
+     * @BeMenu("MD5", ordering="2")
      * @BeRoute("/tool/md5")
      */
     public function index()

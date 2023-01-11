@@ -39,9 +39,26 @@ class Template extends Section
         echo '</div>';
         echo '</div>';
 
+        echo '<div class="be-row be-mt-200">';
+        echo '<div class="be-col-auto be-lh-200">常用颜色：</div>';
+        foreach ([
+                     '3365ba', // 蓝
+                     'ff6600', // 橙
+                     'f56c6c', // 红
+                     '67c23a', // 绿
+                     '7952b3', // 紫
+                     'cc6699', // 粉
+                     'b75555', // 褐
+                     '444444', // 黑
+                 ] as $color) {
+            echo '<div class="be-col-aut0">';
+            echo '<a href="javascript:void(0);" class="be-d-inline-block be-p-50 be-c-fff be-mx-25" style="background-color:#' . $color . ';" onclick="$(\'#key\').val(\'' . $color . '\');checkEncode();">#' . $color . '</a>';
+            echo '</div>';
+        }
+        echo '</div>';
 
         echo '<div id="result">';
-        echo '<div class="be-row be-mt-100">';
+        echo '<div class="be-row be-mt-200">';
         echo '<div class="be-col">';
         echo '<div class="be-ta-center">变浅</div>';
         echo '<ul class="be-mt-50 be-mb-200" id="lighter-colors"></ul>';

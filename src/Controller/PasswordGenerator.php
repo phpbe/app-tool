@@ -10,7 +10,7 @@ class PasswordGenerator
     /**
      * Base64
      *
-     * @BeMenu("密码生成器")
+     * @BeMenu("密码生成器", ordering="4")
      * @BeRoute("/tool/password-generator")
      */
     public function index()

@@ -10,7 +10,7 @@ class Base64
     /**
      * Base64
      *
-     * @BeMenu("BASE64")
+     * @BeMenu("BASE64", ordering="1")
      * @BeRoute("/tool/base60")
      */
     public function index()
