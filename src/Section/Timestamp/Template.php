@@ -24,7 +24,10 @@ class Template extends Section
             echo '<div class="be-container">';
         }
 
-        echo '<div class="be-row">';
+        echo '<h1 class="be-h1 be-bb-ccc be-fs-125 be-pb-25">' . $this->page->pageTitle . '</h1>';
+        echo '<div class="be-mt-25 be-c-999">' . $this->page->metaDescription . '</div>';
+
+        echo '<div class="be-row be-mt-200">';
         echo '<div class="be-col">请输入UNIX时间戳或日期</div>';
         echo '<div class="be-col-auto"><div style="width: 240px"></div></div>';
         echo '<div class="be-col">计算结果</div>';
@@ -33,7 +36,7 @@ class Template extends Section
         echo '<div class="be-row be-mt-100">';
         echo '<div class="be-col">';
         echo '<form id="form_encode">';
-        echo '<textarea class="be-textarea" style="width:100%; height:60px;resize:none;" name="key" id="key_encode" placeholder="请输入UNIX时间戳(整数)..." onkeyup="checkEncode();"></textarea>';
+        echo '<textarea class="be-textarea" style="width:100%; height:60px;resize:none;" name="key" id="key_encode" placeholder="请输入UNIX时间戳(整数)..." onkeyup="checkEncode();">' . time() . '</textarea>';
         echo '</form>';
         echo '</div>';
         echo '<div class="be-col-auto">';
@@ -46,12 +49,10 @@ class Template extends Section
         echo '</div>';
         echo '</div>';
 
-        echo '<div class="be-mt-50 be-c-999">当前UNIX时间戳：' . time() . '</div>';
-
         echo '<div class="be-row be-mt-200">';
         echo '<div class="be-col">';
         echo '<form id="form_decode">';
-        echo '<textarea class="be-textarea" style="width:100%; height:60px;resize:none;" name="key" id="key_decode" placeholder="请输入字符格式的日期(如: 2000-01-01 12:00:00)..." onkeyup="checkDecode();"></textarea>';
+        echo '<textarea class="be-textarea" style="width:100%; height:60px;resize:none;" name="key" id="key_decode" placeholder="请输入字符格式的日期(如: 2000-01-01 12:00:00)..." onkeyup="checkDecode();">' . date('Y-m-d H:i:s') . '</textarea>';
         echo '</form>';
         echo '</div>';
         echo '<div class="be-col-auto">';
@@ -63,8 +64,6 @@ class Template extends Section
         echo '<div id="result_decode"></div>';
         echo '</div>';
         echo '</div>';
-
-        echo '<div class="be-mt-50 be-c-999">当前时间：' . date('Y-m-d H:i:s') . '</div>';
 
         if ($this->position === 'middle' && $this->config->width === 'default') {
             echo '</div>';

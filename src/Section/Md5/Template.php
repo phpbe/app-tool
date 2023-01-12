@@ -24,7 +24,11 @@ class Template extends Section
             echo '<div class="be-container">';
         }
 
-        echo '<div class="be-row">';
+        echo '<h1 class="be-h1 be-bb-ccc be-fs-125 be-pb-25">' . $this->page->pageTitle . '</h1>';
+        echo '<div class="be-mt-25 be-c-999">' . $this->page->metaDescription . '</div>';
+
+        echo '<div class="be-row be-mt-200">';
+
         echo '<div class="be-col">请输入要加密的字符串</div>';
         echo '<div class="be-col-auto"><div style="width: 240px"></div></div>';
         echo '<div class="be-col">计算结果</div>';

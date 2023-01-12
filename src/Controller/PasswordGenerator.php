@@ -29,15 +29,4 @@ class PasswordGenerator
         $response->display();
     }
 
-
-    public function encode()
-    {
-
-    }
-
-    public function decode()
-    {
-
-    }
-
 }

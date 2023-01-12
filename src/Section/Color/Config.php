@@ -36,7 +36,7 @@ class Config
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingMobile = '1rem';
+    public string $paddingMobile = '0 0 1rem 0';
 
     /**
      * @BeConfigItem("内边距（平板端）",
@@ -44,7 +44,7 @@ class Config
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingTablet = '1rem';
+    public string $paddingTablet = '0 0 1.5rem 0';
 
     /**
      * @BeConfigItem("内边距（电脑端）",
@@ -52,7 +52,7 @@ class Config
      *     description = "上右下左（CSS padding 语法）"
      * )
      */
-    public string $paddingDesktop = '1rem';
+    public string $paddingDesktop = '0 0 2rem 0';
 
     /**
      * @BeConfigItem("外边距（手机端）",

@@ -24,13 +24,19 @@ class Template extends Section
             echo '<div class="be-container">';
         }
 
-        echo '<div class="be-row">';
+        $themeName = Be::getRequest()->getThemeName();
+        $configTheme = Be::getConfig('Theme.' . $themeName . '.Theme');
+
+        echo '<h1 class="be-h1 be-bb-ccc be-fs-125 be-pb-25">' . $this->page->pageTitle . '</h1>';
+        echo '<div class="be-mt-25 be-c-999">' . $this->page->metaDescription . '</div>';
+
+        echo '<div class="be-row be-mt-200">';
         echo '<div class="be-col-auto be-lh-250">输入3或6位16进制颜色：</div>';
         echo '<div class="be-col-auto be-lh-250">#</div>';
         echo '<div class="be-col-auto">';
         echo '<div class="be-px-50">';
         echo '<form id="form_encode">';
-        echo '<input type="text" class="be-input" name="key" id="key" placeholder="请输入颜色..." onkeyup="checkEncode();" />';
+        echo '<input type="text" class="be-input" name="key" id="key" value="'.trim($configTheme->majorColor, '#').'" placeholder="请输入颜色..." onkeyup="checkEncode();" />';
         echo '</form>';
         echo '</div>';
         echo '</div>';
@@ -155,7 +161,7 @@ class Template extends Section
 
         echo '}';
         echo '});';
-        echo '});';
+        echo '}).trigger("click");';
 
         echo '});';
         echo '</script>';

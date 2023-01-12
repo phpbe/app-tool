@@ -62,7 +62,7 @@ class Color
             $response->json();
         } else {
             $response->set('success', false);
-            $response->set('message', '无效的颜色！');
+            $response->set('message', '请求参数无效！');
             $response->json();
         }
     }
