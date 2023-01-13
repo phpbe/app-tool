@@ -23,7 +23,7 @@ class index
      *     driver = "FormItemInput"
      * )
      */
-    public string $title = '生成PHP echo代码';
+    public string $title = '生成 PHP echo 代码';
 
     /**
      * @BeConfigItem("Meta描述",
@@ -31,7 +31,7 @@ class index
      *     driver = "FormItemInput"
      * )
      */
-    public string $metaDescription = '在线生成生成PHP echo代码，每行输出一条 echo 语句';
+    public string $metaDescription = '在线将文本内容转为 PHP echo 代码，每行生成一条 echo 语句';
 
     /**
      * @BeConfigItem("Meta关键词",
