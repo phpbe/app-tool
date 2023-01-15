@@ -5,9 +5,11 @@ namespace Be\App\Tool\Config\Page\Md5;
 class index
 {
 
-    public int $middle = 1;
+    public int $west = 0;
+    public int $center = 1;
+    public int $east = 0;
 
-    public array $middleSections = [
+    public array $centerSections = [
         [
             'name' => 'App.Tool.Menu',
         ],
