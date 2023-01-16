@@ -40,7 +40,7 @@ class Template extends Section
         echo '</form>';
         echo '</div>';
         echo '<div class="be-col-auto">';
-        echo '<div class="be-ta-center" style="width: 240px">';
+        echo '<div class="be-ta-center be-px-100">';
         echo '<input type="button" class="be-btn be-btn-major" id="btn_encode" value="时间戳转字符 &gt;&gt;" />';
         echo '</div>';
         echo '</div>';
@@ -56,7 +56,7 @@ class Template extends Section
         echo '</form>';
         echo '</div>';
         echo '<div class="be-col-auto">';
-        echo '<div class="be-ta-center" style="width: 240px">';
+        echo '<div class="be-ta-center be-px-100">';
         echo '<input type="button" class="be-btn be-btn-major" id="btn_decode" value="字符转时间戳 &gt;&gt;" />';
         echo '</div>';
         echo '</div>';

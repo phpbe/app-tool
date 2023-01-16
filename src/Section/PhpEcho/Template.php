@@ -36,7 +36,7 @@ class Template extends Section
         echo '<div class="be-row be-mt-100">';
         echo '<div class="be-col">';
         echo '<form id="form_encode">';
-        echo '<textarea class="be-textarea" style="width:100%; height:200px;resize:none;" name="key" id="key_encode" placeholder="请输入要输出的文本..." onkeyup="checkEncode();">';
+        echo '<textarea class="be-textarea" style="width:100%; height:400px;resize:none;" name="key" id="key_encode" placeholder="请输入要输出的文本..." onkeyup="checkEncode();">';
         echo '<style type="text/css">' . "\n";
         echo '.CodeMirror {' . "\n";
         echo '    border: 1px solid #DCDFE6;' . "\n";
@@ -52,12 +52,12 @@ class Template extends Section
         echo '</form>';
         echo '</div>';
         echo '<div class="be-col-auto">';
-        echo '<div class="be-ta-center" style="width: 240px">';
+        echo '<div class="be-ta-center be-px-100">';
         echo '<input type="button" class="be-btn be-btn-major" id="btn_encode" value="生成 &gt;&gt;" />';
         echo '</div>';
         echo '</div>';
         echo '<div class="be-col">';
-        echo '<textarea class="be-textarea" style="width:100%; height:200px;resize:none;" name="key" id="result_encode" placeholder="处理结果"></textarea>';
+        echo '<textarea class="be-textarea" style="width:100%; height:400px;resize:none;" name="key" id="result_encode" placeholder="处理结果"></textarea>';
         echo '</div>';
         echo '</div>';
 
@@ -120,7 +120,7 @@ class Template extends Section
         echo 'checkEncode();';
 
         echo 'let codeMirror1 = CodeMirror.fromTextArea(document.getElementById("key_encode"), {theme:"default",mode:"htmlmixed",lineNumbers:true,lineWrapping:true});';
-        echo 'let codeMirror2 = CodeMirror.fromTextArea(document.getElementById("result_encode"), {theme:"default",mode:"text/x-php",lineNumbers:true,lineWrapping:true,matchBrackets:true});';
+        echo 'let codeMirror2 = CodeMirror.fromTextArea(document.getElementById("result_encode"), {readOnly:true,theme:"default",mode:"text/x-php",lineNumbers:true,lineWrapping:true,matchBrackets:true});';
 
         echo 'codeMirror1.on("change", function(cm) {$("#key_encode").val(cm.getValue());checkEncode();});';
 

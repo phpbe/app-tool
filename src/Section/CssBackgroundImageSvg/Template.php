@@ -36,7 +36,7 @@ class Template extends Section
         echo '<div class="be-row be-mt-100">';
         echo '<div class="be-col">';
         echo '<form id="form_encode">';
-        echo '<textarea class="be-textarea" style="width:100%; height:200px;resize:none;" name="key" id="key_encode" placeholder="请输入SVG图像代码..." onkeyup="checkEncode();">';
+        echo '<textarea class="be-textarea" style="width:100%; height:400px;resize:none;" name="key" id="key_encode" placeholder="请输入SVG图像代码..." onkeyup="checkEncode();">';
         echo '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">' . "\n";
         echo '<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>' . "\n";
         echo '</svg>';
@@ -48,12 +48,12 @@ class Template extends Section
         echo '</form>';
         echo '</div>';
         echo '<div class="be-col-auto">';
-        echo '<div class="be-ta-center" style="width: 240px">';
+        echo '<div class="be-ta-center be-px-100">';
         echo '<input type="button" class="be-btn be-btn-major" id="btn_encode" value="生成 &gt;&gt;" />';
         echo '</div>';
         echo '</div>';
         echo '<div class="be-col">';
-        echo '<textarea class="be-textarea" style="width:100%; height:200px;resize:none;" name="key" id="result_encode" placeholder="处理结果"></textarea>';
+        echo '<textarea class="be-textarea" style="width:100%; height:400px;resize:none;" name="key" id="result_encode" placeholder="处理结果"></textarea>';
         echo '</div>';
         echo '</div>';
 
@@ -120,7 +120,7 @@ class Template extends Section
         echo 'checkEncode();';
 
         echo  'let codeMirror1 = CodeMirror.fromTextArea(document.getElementById("key_encode"), {theme:"default",mode:"htmlmixed",lineNumbers:true,lineWrapping:true});';
-        echo  'let codeMirror2 = CodeMirror.fromTextArea(document.getElementById("result_encode"), {theme:"default",mode:"text/css",lineNumbers:true,lineWrapping:true,matchBrackets:true});';
+        echo  'let codeMirror2 = CodeMirror.fromTextArea(document.getElementById("result_encode"), {readOnly:true,theme:"default",mode:"text/css",lineNumbers:true,lineWrapping:true,matchBrackets:true});';
 
         echo 'codeMirror1.on("change", function(cm) {$("#key_encode").val(cm.getValue());checkEncode();});';
 
